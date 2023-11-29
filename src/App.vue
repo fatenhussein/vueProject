@@ -1,7 +1,7 @@
 <template>
   <h1>ninga reaction timer</h1>
 
-  <button @click="start">play</button>
+  <button @click="start" :disabled="isPlaying">play</button>
   <Block_component  v-if="isPlaying" :delay="delay"/>
 </template>
 
