@@ -1,18 +1,27 @@
 <template>
+  <h1>ninga reaction timer</h1>
 
-
-<h1> ninga reaction timer</h1>
-
+  <button @click="start">play</button>
 </template>
 
 <script>
-
 export default {
   name: 'App',
-  components: {
- 
-  }
-}
+  components: {},
+
+  data() {
+    return {
+      isPlaying: false,
+      delay: null,
+    };
+  },
+  methods: {
+    start() {
+
+      this.isPlaying = true;
+    },
+  },
+};
 </script>
 
 <style>
