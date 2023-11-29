@@ -2,12 +2,16 @@
   <h1>ninga reaction timer</h1>
 
   <button @click="start">play</button>
+  <Block_component  v-if="isPlaying" :delay="delay"/>
 </template>
 
 <script>
+import Block_component from './components/Block_component.vue';
 export default {
   name: 'App',
-  components: {},
+  components: {
+    Block_component,
+  },
 
   data() {
     return {
@@ -17,8 +21,6 @@ export default {
   },
   methods: {
     start() {
-
-
       this.delay = 2000 + Math.random() * 5000;
       this.isPlaying = true;
 

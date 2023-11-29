@@ -9,7 +9,7 @@
 </template>
 <script>
 export default {
-    
+    props:['delay']
 }
 </script>
 <style >
