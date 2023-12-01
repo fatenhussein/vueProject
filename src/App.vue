@@ -2,7 +2,8 @@
   <h1>ninga reaction timer</h1>
 
   <button @click="start" :disabled="isPlaying">play</button>
-  <Block_component  v-if="isPlaying" :delay="delay"/>
+  <Block_component v-if="isPlaying" :delay="delay" @end="endGame" />
+  <p>reaction time:{{ score }} ms</p>
 </template>
 
 <script>
@@ -17,6 +18,7 @@ export default {
     return {
       isPlaying: false,
       delay: null,
+      score: null,
     };
   },
   methods: {
@@ -25,6 +27,11 @@ export default {
       this.isPlaying = true;
 
       console.log(this.delay);
+    },
+
+    endGame(reactionTime) {
+      this.score = reactionTime;
+      this.isPlaying = false;
     },
   },
 };
